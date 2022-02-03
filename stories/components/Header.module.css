@@ -1,0 +1,27 @@
+.site-header {
+    margin: 0 0 1rem 0;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    border-bottom: 2px solid var(--color-black);
+}
+
+.site-header_content {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.site-title {
+    margin-left: 1em;
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-title);
+}
+
+@media (min-width: 48em) {
+    .site-header_content {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: var(--max-content);
+    }
+}

@@ -1,0 +1,12 @@
+.add-choice {
+    margin-top: 2rem;
+}
+
+.add-choice_fieldset {
+    margin: 0 0 1rem 0;
+}
+
+.add-choice_legend {
+    font-family: var(--font-family-title);
+    font-weight: var(--font-weight-bold);
+}

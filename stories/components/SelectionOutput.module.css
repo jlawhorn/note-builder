@@ -1,0 +1,32 @@
+.selection-output {
+
+}
+
+.text-output {
+    display: block;
+    overflow-y: auto;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: 1px solid var(--color-black);
+    background-color: var(--color-light-gray);
+}
+
+@media (max-width: 47.9375em) {
+    .selection-output {
+        padding: 1rem 0;
+    }
+}
+
+@media (min-width: 48em) {
+    .selection-output {
+        flex-grow: 1;
+        margin: 0 0 0 1rem;
+        padding: 0 1rem;
+        border-left: 1px solid var(--color-black);
+    }
+    .text-output {
+        height: calc(100% - 1rem);
+	    min-height: calc(100vh - 13rem);
+    }
+}

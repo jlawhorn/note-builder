@@ -1,0 +1,19 @@
+.site-main {
+    display: flex;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+@media (max-width: 47.9375em) {
+    .site-main {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 48em) {
+    .site-main {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: var(--max-content);
+    }
+}

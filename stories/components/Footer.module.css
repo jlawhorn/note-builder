@@ -1,0 +1,10 @@
+.site-footer {
+    padding: 1rem 0.5rem 0 0.5rem;
+    margin: 1rem 0 0 0;
+    border-top: 2px solid var(--color-black);
+}
+
+.site-footer_content {
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-light);
+}

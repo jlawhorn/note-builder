@@ -1,0 +1,30 @@
+.selection-menu {
+
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab {
+    padding: 0.5rem;
+    border: solid var(--color-black);
+    border-width: 1px;
+    border-radius: 0.25rem 0.25rem 0 0;
+    background-color: var(--color-light-gray);
+}
+
+.tab--active {
+    border-width: 1px 1px 0 1px;
+    background-color: var(--color-white);
+}
+
+.tab-title {
+    font-size: 1.25rem;
+}
+
+@media (min-width: 48em) {
+    .selection-menu {
+        width: 21rem;
+    }
+}

@@ -1,0 +1,91 @@
+.btn {
+    line-height: 1;
+    vertical-align: middle;
+    &:not(.btn--blank) {
+        padding: 0.5em;
+        border: 1px solid var(--color-black);
+        border-radius: 0.25rem;
+        background-color: var(--color-white);
+        font-family: var(--font-family-title);
+        font-weight: var(--font-weight-bold);
+    }
+    &:not(:disabled) {
+        transition: background-color 0.5s;
+        cursor: pointer;
+        &:hover {
+            background-color: var(--color-light-gray);
+        }
+    }
+}
+
+.btn--icon {
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    & span {
+        position: absolute;
+        overflow: hidden;
+        margin: -1px;
+        padding: 0;
+        height: 1px;
+        width: 1px;
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+    }
+}
+
+.btn--icon-with-text {
+    background-size: contain;
+    background-position: 0.5rem 50%;
+    background-repeat: no-repeat;
+    & span {
+        padding-left: 2rem;
+    }
+}
+
+.btn--delete {
+    background-image: url('/images/icons/icon_delete.svg');
+}
+.btn--edit {
+    background-image: url('/images/icons/icon_edit.svg');
+}
+.btn--clear {
+    background-image: url('/images/icons/icon_clear.svg');
+}
+.btn--check {
+    background-image: url('/images/icons/icon_check.svg');
+}
+.btn--minus {
+    background-image: url('/images/icons/icon_minus.svg');
+}
+.btn--plus {
+    background-image: url('/images/icons/icon_plus.svg');
+}
+
+.button-list,
+.edit-list {
+    display: flex;
+    flex-wrap: wrap;
+    & .btn {
+        &.btn--icon {
+            width: 1.75rem;
+            height: 1.75rem;
+        }
+        & + .btn {
+            margin-left: 0.5rem;
+        }
+    }
+    & .text-input {
+        margin-right: 0.5rem;
+        padding: 0.15rem 0.5rem;
+        min-height: 1.75rem;
+    }
+    & .primary-item {
+        flex-grow: 1;
+        max-width: calc(100% - 5rem);
+    }
+    & .btn-choice {
+        padding: 0.25rem;
+        border-radius: 0.5rem;
+    }
+}
