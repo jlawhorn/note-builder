@@ -24,14 +24,14 @@ export const Home = ({ ...props }) => {
       outputArray.push(`${levelTitle} : ${item[0].itemText}`);
     });
 
-    return outputArray.join(', ');
+    return outputArray.join('\n');
   }
 
-  const noteArrayUpdateCallback = (newItemId, newItemText) => {
+  const noteArrayUpdateCallback = (newItemId, newItemText, isEndOfLine) => {
     const newArray = noteArray;
     newArray.push([{
       "itemId" : newItemId,
-      "itemText" : newItemText
+      "itemText" : `${newItemText}${isEndOfLine ? '\n' : ''}`
     }]);
     setNoteArray(newArray);
     setNoteTextArray(buildNoteContent(newArray, newItemId));

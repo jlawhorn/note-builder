@@ -18,6 +18,17 @@ export const SelectionMenu = ({
   const [currentResponse, setCurrentResponse] = useState();
   const [filterText, setFilterText] = useState('');
 
+  const resetCurrentNoteChunk = () => {
+    console.log('Reset');
+    setActiveLevel(0);
+    setCurrentDomainText("Diagnosis");
+    setCurrentDomain('0');
+    setCurrentDiagnosis('');
+    setCurrentIntervention('');
+    setCurrentResponse('');
+    setFilterText('');
+  }
+
   const filterToLevel = () => {
     let newArray = [];
     if(activeLevel === 0) {
@@ -51,6 +62,7 @@ export const SelectionMenu = ({
 
   const choiceChosenCallback = (currentItemId, currentItemText) => {
     const deconstructCurrentId = currentItemId.split('-');
+    let resetFlag = false;
     if(deconstructCurrentId.length >= 1) {
       setCurrentDomain(deconstructCurrentId[0]);
       if(deconstructCurrentId.length >= 2) {
@@ -59,18 +71,19 @@ export const SelectionMenu = ({
           setCurrentIntervention(deconstructCurrentId[2]);
           if(deconstructCurrentId.length >= 4) {
             setCurrentResponse(deconstructCurrentId[3]);
-            console.log('Reset Flow');
+            resetFlag = true;
           }
         }
       }
     }
-    parentNoteArrayUpdateCallback(currentItemId, currentItemText);
+    parentNoteArrayUpdateCallback(currentItemId, currentItemText, resetFlag);
     setActiveLevel(deconstructCurrentId.length - 1);
     if(activeLevel <= 1) {
       setCurrentDomainText(tabData.tabs[deconstructCurrentId.length - 1].title);
     }
-    console.log(`Write "${currentItemText}" to Note Pad`);
-    //Reset
+    if(resetFlag) {
+      resetCurrentNoteChunk();
+    }
   }
 
   const rollProcessBack = (toTab) => {
